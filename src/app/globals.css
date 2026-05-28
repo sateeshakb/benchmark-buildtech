@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-poppins: var(--font-poppins);
+  --font-lexend: var(--font-lexend-deca);
+}
+
+body {
+  font-family: var(--font-poppins);
+}
