@@ -23,9 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${bodoniModa.variable} ${poppins.variable}`}>
       <body>
-        <Header />
         <main className="">{children}</main>
-        <Footer />
       </body>
     </html>
   );

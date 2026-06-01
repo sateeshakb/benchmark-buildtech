@@ -6,9 +6,12 @@ import Nav from "./nav";
 import { useEffect, useState } from "react";
 import { Menu } from "lucide-react";
 import { X } from "lucide-react";
+
 export default function Header() {
+  const sectionIds = ["home", "about", "services", "portfolio", "contact"];
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [active, setActive] = useState("home");
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -16,16 +19,37 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const observers = sectionIds.map((id) => {
+      const el = document.getElementById(id);
+      console.log(id, el);
+
+      if (!el) return null;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          console.log(id, entry.isIntersecting);
+          if (entry.isIntersecting) setActive(id);
+        },
+        { threshold: 0.5 },
+      );
+      observer.observe(el);
+      return observer;
+    });
+
+    return () => observers.forEach((o) => o?.disconnect());
+  }, []);
+
   return (
     <header
-      className={`z-10 fixed top-0 right-0 left-0 transition-all  duration-500 ${scrolled ? "bg-neutral-800 backdrop-blur-sm shadow-md" : "bg-bg-secondary"}`}
+      className={`z-20 fixed top-0 right-0 left-0 transition-all  duration-500 ${scrolled ? "bg-neutral-800 backdrop-blur-sm shadow-md" : "bg-warm-500"}`}
     >
       <div className="w-full max-w-360 mx-auto flex justify-between items-center px-4 py-2">
         <Image alt="Benchmark BuildTech Logo" src={images.logo} />
 
         {/* desktop nav */}
         <div className="hidden md:block">
-          <Nav scrolled={scrolled} />
+          <Nav scrolled={scrolled} active={active} />
         </div>
 
         {/* hamburger menu */}
@@ -42,12 +66,13 @@ export default function Header() {
         </button>
         {/* mobile menu */}
         <div
-          className={`md:hidden absolute overflow-hidden top-(--header-height) left-0 right-0  shadow-lg transition-all duration-500 ${isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"} ${scrolled ? "bg-neutral-800" : "bg-bg-secondary"}`}
+          className={`md:hidden absolute overflow-hidden top-(--header-height) left-0 right-0  shadow-lg transition-all duration-500 ${isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"} ${scrolled ? "bg-neutral-800" : "bg-warm-500"}`}
         >
           <Nav
             mobile={true}
             scrolled={scrolled}
             onMenuItemClick={() => setIsMenuOpen(false)}
+            active={active}
           />
         </div>
       </div>

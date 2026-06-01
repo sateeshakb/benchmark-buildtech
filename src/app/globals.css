@@ -6,7 +6,6 @@
   --header-height: 64px;
 
   --color-bg-primary: #fff;
-  --color-bg-secondary: #f5f5ed;
 
   --color-primary-100: #fcf5e0;
   --color-primary-200: #f9ebc1;
@@ -39,6 +38,17 @@
   --color-neutral-800: #333333;
   --color-neutral-900: #1a1a1a;
   --color-neutral-950: #0d0d0d;
+
+  --color-warm-50: #fffffe;
+  --color-warm-100: #fdfdfc;
+  --color-warm-200: #fcfcfa;
+  --color-warm-300: #fbfbf7;
+  --color-warm-400: #f8f8f2;
+  --color-warm-500: #f5f5ed;
+  --color-warm-600: #dbdbbf;
+  --color-warm-700: #c1c190;
+  --color-warm-800: #a8a862;
+  --color-warm-900: #7c7c45;
 }
 
 body {
