@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <section id="about" className="w-full bg-bg-secondary py-20">
+    <section id="about" className="w-full bg-warm-500 py-20">
       <div className="max-w-360 mx-auto px-4 ">
         {/* about benchmark buildTech section  */}
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-4">
