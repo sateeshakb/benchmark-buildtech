@@ -7,7 +7,7 @@ export default function Nav({ mobile, onMenuItemClick, scrolled, active }) {
     { href: "/", label: "Home", id: "home" },
     { href: "#about", label: "About", id: "about" },
     { href: "#services", label: "Services", id: "services" },
-    { href: "#portfolio", label: "Portfolio", id: "portfolio" },
+    // { href: "#portfolio", label: "Portfolio", id: "portfolio" },
     { href: "#contact", label: "Contact", id: "contact" },
   ];
 

@@ -8,7 +8,7 @@ import { Menu } from "lucide-react";
 import { X } from "lucide-react";
 
 export default function Header() {
-  const sectionIds = ["home", "about", "services", "portfolio", "contact"];
+  const sectionIds = ["home", "about", "services", "contact"];
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [active, setActive] = useState("home");
@@ -31,7 +31,7 @@ export default function Header() {
           console.log(id, entry.isIntersecting);
           if (entry.isIntersecting) setActive(id);
         },
-        { threshold: 0.5 },
+        { threshold: 0.3 },
       );
       observer.observe(el);
       return observer;

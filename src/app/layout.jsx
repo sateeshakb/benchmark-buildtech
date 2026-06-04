@@ -2,6 +2,7 @@ import { Poppins, Bodoni_Moda } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import { Toaster } from "sonner";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${bodoniModa.variable} ${poppins.variable}`}>
       <body>
         <main className="">{children}</main>
+        <Toaster />
       </body>
     </html>
   );

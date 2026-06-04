@@ -1,8 +1,9 @@
 import Button from "@/components/button";
 import Images from "@/lib/images";
 import Image from "next/image";
+import ContactModal from "./contactModal";
 
-export default function Hero() {
+export default function Hero({ isModalOpen, toggleModal }) {
   return (
     <section id="home" className="w-full bg-bg-primary pt-(--header-height)">
       {/* wrapper */}
@@ -31,8 +32,12 @@ export default function Hero() {
           </p>
           {/* button */}
           <div className="flex gap-8 lg:mt-4">
-            <Button buttonText="Book Free Consultation" variant={"primary"} />
-            <Button buttonText="View Portfolio" variant={"secondary"} />
+            <Button
+              buttonText="Book Free Consultation"
+              variant={"primary"}
+              onClickHandler={toggleModal}
+            />
+            {/* <Button buttonText="View Portfolio" variant={"secondary"} /> */}
           </div>
         </div>
         {/* images block */}
@@ -55,6 +60,7 @@ export default function Hero() {
           </div>
         </div>
       </div>
+      <ContactModal isModalOpen={isModalOpen} toggleModal={toggleModal} />
     </section>
   );
 }
