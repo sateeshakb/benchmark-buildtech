@@ -18,6 +18,15 @@ export default function ContactModal({ isModalOpen, toggleModal }) {
       consent: formData.get("consent"),
     };
 
+    if (!data.name || !data.email || !data.phone || !data.consent) {
+      toast.error("Please fill all required fields");
+      return;
+    }
+    if (!/^[0-9]{10}$/.test(data.phone)) {
+      toast.error("Please fill valid phone number");
+      return;
+    }
+
     try {
       setIsSubmitting(true);
 
@@ -56,7 +65,7 @@ export default function ContactModal({ isModalOpen, toggleModal }) {
       {/* modal container */}
       <div
         onClick={(e) => e.stopPropagation()}
-        className={`px-4 py-4 flex flex-col w-full md:w-125 bg-warm-50 border-2 border-warm-900 rounded-2xl relative transition-all duration-500 ${isModalOpen ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-95 pointer-events-none "}`}
+        className={`px-4 py-6 flex flex-col w-full md:w-125 bg-warm-50 border-2 border-warm-900 rounded-2xl relative transition-all duration-500 ${isModalOpen ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-95 pointer-events-none "}`}
       >
         <button onClick={toggleModal}>
           <X
@@ -64,8 +73,8 @@ export default function ContactModal({ isModalOpen, toggleModal }) {
             className="absolute top-4 right-4 font-bold text-neutral-700 hover:text-neutral-500"
           />
         </button>
-        <div>
-          <p className="text-lg text-secondary-600 font-medium  ">
+        <div className="w-fit mx-auto">
+          <p className="text-xl text-center text-secondary-600 font-semibold tracking-wider">
             Book Free Consultation
           </p>
           <p className="mt-1 text-base text-neutral-800">
@@ -78,43 +87,59 @@ export default function ContactModal({ isModalOpen, toggleModal }) {
           className="mt-6 flex flex-col gap-4 justify-center items-stretch"
           onSubmit={handleSubmit}
         >
-          <input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Enter your name"
-            required
-            className="px-2 py-2 border-b-2 border-neutral-400 outline-none  "
-          />
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Enter your email"
-            required
-            className="px-2 py-2 border-b-2 border-neutral-400 outline-none  "
-          />
-          <input
-            type="tel"
-            name="phone"
-            id="phone"
-            pattern="[6-9][0-9]{9}"
-            placeholder="Enter your 10 digit mobile number"
-            required
-            className="px-2 py-2 border-b-2 border-neutral-400 outline-none  "
-          />
-          <textarea
-            name="message"
-            id="message"
-            placeholder="Your message (optional)"
-            className="px-2 py-2 border-b-2 border-neutral-400 outline-none  "
-          ></textarea>
+          <label htmlFor="name" className="flex flex-col gap-1">
+            <span>
+              Full Name <span className="text-red-500">*</span>
+            </span>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Enter your name"
+              className="outline-none border border-neutral-200 p-2 rounded-md "
+            />
+          </label>
+
+          <label htmlFor="email" className="flex flex-col gap-1">
+            <span>
+              Email<span className="text-red-500">*</span>
+            </span>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Enter your email"
+              className="outline-none border border-neutral-200 p-2 rounded-md"
+            />
+          </label>
+
+          <label htmlFor="phone" className="flex flex-col gap-1">
+            <span>
+              Mobile Number<span className="text-red-500">*</span>
+            </span>
+            <input
+              type="tel"
+              name="phone"
+              id="phone"
+              placeholder="Ex: 1234567890"
+              className="outline-none border border-neutral-200 p-2 rounded-md"
+            />
+          </label>
+
+          <label htmlFor="message" className="flex flex-col gap-1">
+            <span>Message</span>
+            <textarea
+              name="message"
+              id="message"
+              placeholder="Your message (optional)"
+              className="outline-none border border-neutral-200 p-2 rounded-md"
+            />
+          </label>
           <div className="flex items-start gap-2 mt-4">
             <input
               type="checkbox"
               name="consent"
               id="consent"
-              required
               className="mt-1 accent-primary-500"
             />
             <label htmlFor="consent" className="text-sm text-neutral-600">

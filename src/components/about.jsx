@@ -1,5 +1,9 @@
 import Images from "@/lib/images";
 import Image from "next/image";
+import VisionCard from "./visonCard";
+import { TargetIcon } from "lucide-react";
+import { Constants } from "@/lib/constants";
+import { Lightbulb } from "lucide-react";
 
 export default function About() {
   return (
@@ -67,31 +71,34 @@ export default function About() {
         </div>
 
         {/* meet the principle section  */}
-        <div className="mt-16  ">
-          <p className="font-primary font-bold text-2xl">
+        <div className="mt-16   ">
+          <p className="font-primary font-bold text-3xl w-fit mx-auto">
             Meet <span className="text-secondary-500">The Principle </span>
           </p>
-          <div className="mt-8 flex flex-col lg:flex-row items-center justify-center lg:max-w-4/5 lg:gap-4 lg:mx-auto">
+
+          {/* wrapper */}
+
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center lg:max-w-4/5 sm:gap-4 sm:mx-auto border-2 border-warm-600 px-4 py-4 rounded-2xl shadow-2xl ">
             {/* founder image block */}
             <div className="flex flex-col justify-center items-center">
-              <div className="w-92 h-92 rounded-full text-center overflow-hidden relative">
+              <div className="w-72 h-72 rounded-full text-center overflow-hidden relative">
                 <Image
                   src={Images.founderImage}
                   alt="Founder of Benchmark Buildtech"
-                  fill
-                  className="object-cover object-center"
+                  className="object-contain object-center"
                 />
               </div>
               <p className="mt-4 font-medium text-neutral-900">
                 Founder & Principle
               </p>
-              <p className="mt-2 tracking-widest font-bold font-primary text-secondary-500">
+              <p className="mt-1 text-xl tracking-widest font-bold font-secondary text-secondary-500">
                 SATEESHA KB
               </p>
             </div>
+
             {/* text block */}
-            <div className="mt-4 lg:-mt-8 ">
-              <p>
+            <div className="mt-4 sm:-mt-8 ">
+              <p className="tracking-wider">
                 Founder & Principal –Benchmark Buildtech Satheesha KB is a
                 seasoned civil engineer and PMP®-certified professional with
                 over 18 years of experiencein interior fit-outs, real estate,
@@ -103,6 +110,21 @@ export default function About() {
               </p>
             </div>
           </div>
+        </div>
+
+        {/* what sets us apart */}
+        <div className="mt-20 lg:max-w-4/5 mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+          <VisionCard
+            icon={<TargetIcon size={50} className="text-secondary-500" />}
+            title="Our Mission"
+            text={Constants.aboutSection.ourVision}
+          />
+          <VisionCard
+            icon={<Lightbulb size={50} className="text-primary-500" />}
+            title="Our Vision"
+            variant={"primary"}
+            text={Constants.aboutSection.ourMission}
+          />
         </div>
       </div>
     </section>

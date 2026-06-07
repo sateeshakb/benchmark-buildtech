@@ -24,9 +24,9 @@ export default function Page() {
 
       {/* <Portfolio /> */}
 
-      <Contact />
+      <Contact isModalOpen={isModalOpen} toggleModal={toggleModal} />
 
-      <Footer />
+      <Footer isModalOpen={isModalOpen} toggleModal={toggleModal} />
     </section>
   );
 }

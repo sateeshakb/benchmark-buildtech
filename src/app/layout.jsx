@@ -22,10 +22,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${bodoniModa.variable} ${poppins.variable}`}>
+    <html
+      lang="en"
+      className={`${bodoniModa.variable} ${poppins.variable} scroll-smooth custom-scrollbar `}
+    >
       <body>
         <main className="">{children}</main>
-        <Toaster />
+        <Toaster position="top-right" />
       </body>
     </html>
   );

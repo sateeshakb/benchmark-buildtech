@@ -11,7 +11,12 @@ import {
   Preview,
 } from "react-email";
 
-export default function ConsultationRequest({ name, email, phone, message }) {
+export default function ConsultationRequestEmail({
+  name,
+  email,
+  phone,
+  message,
+}) {
   return (
     <Html lang="en" dir="ltr">
       <Head />

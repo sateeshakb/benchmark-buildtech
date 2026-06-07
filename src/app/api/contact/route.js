@@ -1,4 +1,5 @@
-import ConsultationRequest from "@/emails/consultationRequest";
+import ConsultationRequestEmail from "@/emails/consultationRequestEmail";
+import ConsultationRequest from "@/emails/consultationRequestEmail";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -17,7 +18,7 @@ export async function POST(request) {
         { status: 400 },
       );
     }
-    if (!/^[6-9][0-9]{9}$/.test(phone)) {
+    if (!/^[0-9]{10}$/.test(phone)) {
       return Response.json(
         {
           success: false,
@@ -31,7 +32,7 @@ export async function POST(request) {
       from: "Benchmark Buildtech <onboarding@resend.dev>",
       to: process.env.RECIPIENT_EMAIL,
       subject: `New Consultation Request from ${name}`,
-      react: ConsultationRequest({ name, email, phone, message }),
+      react: ConsultationRequestEmail({ name, email, phone, message }),
     });
 
     return Response.json(
