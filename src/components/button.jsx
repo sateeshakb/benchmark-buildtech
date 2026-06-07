@@ -15,7 +15,7 @@ export default function Button({
         // return primary button
         <button
           onClick={onClickHandler}
-          className="max-sm:px-2 max-sm:py-2 px-4 py-3 font-lexend font-medium bg-primary-500 rounded-full hover:bg-primary-600 transition-all duration-300 "
+          className="max-sm:px-2 max-sm:py-2 px-4 py-3 font-lexend font-medium bg-primary-500 rounded-full hover:bg-primary-600 transition-all duration-300 w-fit"
         >
           {link ? <Link href={url}>{buttonText} </Link> : buttonText}
           {arrowIcon && <ArrowRight />}

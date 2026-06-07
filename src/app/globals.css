@@ -54,3 +54,24 @@
 body {
   font-family: var(--font-poppins);
 }
+button {
+  cursor: pointer;
+}
+
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: var(--color-warm-500);
+    border-radius: 100px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--color-secondary-500);
+    border-radius: 100px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--color-secondary-700);
+  }
+}
