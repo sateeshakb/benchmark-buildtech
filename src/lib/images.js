@@ -1,4 +1,4 @@
-import logo from "@/assets/logo.svg";
+import logo from "@/assets/bb_logo.png";
 import heroImageOne from "@/assets/images/hero-2.jpg";
 import heroImageTwo from "@/assets/images/image-7.jpg";
 import aboutImage from "@/assets/images/about.jpg";

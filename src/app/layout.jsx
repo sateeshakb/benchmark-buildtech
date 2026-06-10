@@ -16,7 +16,7 @@ const bodoniModa = Bodoni_Moda({
 });
 
 export const metadata = {
-  title: "Benchmark BuildTech",
+  title: "Benchmark BuildTech Interior Designs",
   description: "Benchmark Buildtech | Luxurious Interior Design Agency",
 };
 

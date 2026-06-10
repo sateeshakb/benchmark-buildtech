@@ -1,11 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import Button from "./button";
 
-export default function Nav({ mobile, onMenuItemClick, scrolled }) {
-  const [activeNavLink, setActiveNavLink] = useState("home");
-
+export default function Nav({
+  mobile,
+  onMenuItemClick,
+  scrolled,
+  activeNavLink,
+  MarkNavLinkActive,
+  toggleModal,
+}) {
   const navLinks = [
     { href: "/", label: "Home", id: "home" },
     { href: "#about", label: "About", id: "about" },
@@ -24,16 +29,14 @@ export default function Nav({ mobile, onMenuItemClick, scrolled }) {
             <Link
               key={navItem.href}
               href={navItem.href}
-              onClick={onMenuItemClick}
-              className={`text-center transition-all duration-500 px-4 py-2 border-b-2
+              onClick={() => {
+                (onMenuItemClick(), MarkNavLinkActive(navItem.id));
+              }}
+              className={`text-center  transition-all duration-500 px-4 py-2 border-b-2
                 ${
                   isActive(navItem.id)
                     ? "text-secondary-500 border-secondary-500"
-                    : `border-transparent ${
-                        scrolled
-                          ? "text-white hover:text-secondary-500"
-                          : "text-black hover:text-secondary-500"
-                      }`
+                    : `border-transparent text-white `
                 }`}
             >
               {navItem.label}
@@ -41,27 +44,30 @@ export default function Nav({ mobile, onMenuItemClick, scrolled }) {
           ))}
         </nav>
       ) : (
-        <nav className="flex justify-center items-center gap-8 font-secondary">
-          {navLinks.map((navItem) => (
-            <Link
-              key={navItem.href}
-              href={navItem.href}
-              onClick={() => setActiveNavLink(navItem.id)}
-              className={`font-medium transition-all duration-500 px-4 py-2 border-b-2
+        <div className="flex gap-8">
+          <nav className="flex justify-center items-center gap-8 font-secondary">
+            {navLinks.map((navItem) => (
+              <Link
+                key={navItem.href}
+                href={navItem.href}
+                onClick={() => MarkNavLinkActive(navItem.id)}
+                className={`font-medium transition-all duration-500 px-4 py-2 border-b-2
                 ${
                   isActive(navItem.id)
                     ? "text-secondary-500 border-secondary-500"
-                    : `border-transparent ${
-                        scrolled
-                          ? "text-white hover:text-secondary-500"
-                          : "text-black hover:text-secondary-500"
-                      }`
+                    : `border-transparent text-warm-50`
                 }`}
-            >
-              {navItem.label}
-            </Link>
-          ))}
-        </nav>
+              >
+                {navItem.label}
+              </Link>
+            ))}
+          </nav>
+          <Button
+            buttonText="Book Free Consultation"
+            variant={"primary"}
+            onClickHandler={toggleModal}
+          />
+        </div>
       )}
     </>
   );

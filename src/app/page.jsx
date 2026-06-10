@@ -12,9 +12,16 @@ import { useState } from "react";
 export default function Page() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const toggleModal = () => setIsModalOpen(!isModalOpen);
+  const [activeNavLink, setActiveNavLink] = useState("home");
+  const MarkNavLinkActive = (id) => setActiveNavLink(id);
   return (
     <section>
-      <Header isModalOpen={isModalOpen} toggleModal={toggleModal} />
+      <Header
+        isModalOpen={isModalOpen}
+        toggleModal={toggleModal}
+        activeNavLink={activeNavLink}
+        MarkNavLinkActive={MarkNavLinkActive}
+      />
 
       <Hero isModalOpen={isModalOpen} toggleModal={toggleModal} />
 
@@ -26,7 +33,12 @@ export default function Page() {
 
       <Contact isModalOpen={isModalOpen} toggleModal={toggleModal} />
 
-      <Footer isModalOpen={isModalOpen} toggleModal={toggleModal} />
+      <Footer
+        isModalOpen={isModalOpen}
+        toggleModal={toggleModal}
+        activeNavLink={activeNavLink}
+        MarkNavLinkActive={MarkNavLinkActive}
+      />
     </section>
   );
 }

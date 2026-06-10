@@ -1,13 +1,11 @@
-import { Hammer } from "lucide-react";
 import ServiceCard from "./serviceCard";
 import { ServiceCardData } from "@/lib/constants";
-import { Home } from "lucide-react";
 import WhoWeServeCard from "./whoWeServeCard";
 import Testimonials from "./testimonials";
 
 export default function Services() {
   return (
-    <section id="services" className=" py-12 bg-warm-50">
+    <section id="services" className=" py-20 bg-warm-50">
       {/* container */}
       <div className="max-w-360 mx-auto px-4  z-2 ">
         <h3 className="text-3xl font-medium font-primary">
