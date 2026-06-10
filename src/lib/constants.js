@@ -42,7 +42,7 @@ export const ServiceCardData = {
     {
       id: 3,
       icon: <BadgeCheck size={40} className="text-secondary-500" />,
-      title: "Construction & Fit-out Upgrades",
+      title: "Cost & Quality Management",
       text: "Transparent cost control, value engineering, and strict quality assurance across all stages.",
     },
     {
@@ -53,13 +53,13 @@ export const ServiceCardData = {
     },
     {
       id: 5,
-      icon: <GanttChart size={40} className="text-secondary-500" />,
-      title: "Luxury Residential Interior Fit-Outs",
+      icon: <KeyRound size={40} className="text-secondary-500" />,
+      title: "Turnkey Interior Solutions",
       text: "Single-point responsibility from planning to handover, ensuring seamless coordination and execution.",
     },
     {
       id: 6,
-      icon: <KeyRound size={40} className="text-secondary-500" />,
+      icon: <GanttChart size={40} className="text-secondary-500" />,
       title: "Project Management Services",
       text: "Structured planning, scheduling, budgeting, execution control, and quality oversight.",
     },

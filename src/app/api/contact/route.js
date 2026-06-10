@@ -1,8 +1,9 @@
 import ConsultationRequestEmail from "@/emails/consultationRequestEmail";
-import ConsultationRequest from "@/emails/consultationRequestEmail";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+console.log("api key:", process.env.RESEND_API_KEY);
+console.log("email:", process.env.RECIPIENT_EMAIL);
 export async function POST(request) {
   try {
     const body = await request.json();

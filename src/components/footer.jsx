@@ -6,7 +6,12 @@ import { MapPin } from "lucide-react";
 import { Phone } from "lucide-react";
 import { Mail } from "lucide-react";
 
-export default function Footer({ isModalOpen, toggleModal }) {
+export default function Footer({
+  isModalOpen,
+  toggleModal,
+  MarkNavLinkActive,
+  activeNavLink,
+}) {
   const navLinks = [
     { href: "/", label: "Home", id: "home" },
     { href: "#about", label: "About", id: "about" },
@@ -53,7 +58,11 @@ export default function Footer({ isModalOpen, toggleModal }) {
         <div className="-mt-48 md:-mt-20 flex flex-col flex-wrap items-center justify-center sm:flex-row md:items-start sm:justify-evenly gap-4 border py-6 border-neutral-700 rounded-lg">
           {/* Logo */}
           <div className="flex flex-col gap-4 items-center">
-            <Image src={Images.logo} alt="Benchmark Builtech logo" />
+            <Image
+              src={Images.logo}
+              width={200}
+              alt="Benchmark Builtech logo"
+            />
             <p className="text-warm-50 text-sm  tracking-wider">
               Crafting Luxurious Spaces
             </p>
@@ -94,12 +103,13 @@ export default function Footer({ isModalOpen, toggleModal }) {
             <p className="text-warm-50 text-lg font-medium underline underline-offset-8 decoration-secondary-500">
               Quick Links
             </p>
-            <div className="mt-4 flex flex-col gap-3 items-center text-neutral-500 ">
+            <div className="mt-4 flex flex-col gap-3 items-center  ">
               {navLinks.map((navItem) => (
                 <Link
                   key={navItem.href}
                   href={navItem.href}
-                  className="hover:text-secondary-500 "
+                  onClick={() => MarkNavLinkActive(navItem.id)}
+                  className={`${navItem.id === activeNavLink ? "text-secondary-500" : "text-neutral-500"} hover:text-secondary-500 `}
                 >
                   {navItem.label}
                 </Link>

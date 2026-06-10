@@ -4,7 +4,7 @@ import QualifiedLead from "./qualifiedLead";
 
 export default function Contact({ isModalOpen, toggleModal }) {
   return (
-    <section id="contact" className=" pt-12 pb-84 bg-warm-50">
+    <section id="contact" className=" pt-20 pb-84 bg-warm-50">
       <div className="max-w-360 mx-auto px-4 flex flex-col lg:flex-row gap-12 lg:gap-4">
         {/* contact text */}
         <div className="flex-1 flex flex-col">
