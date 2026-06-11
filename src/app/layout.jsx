@@ -1,7 +1,8 @@
-import { Poppins, Lexend_Deca } from "next/font/google";
+import { Poppins, Bodoni_Moda } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import { Toaster } from "sonner";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -9,23 +10,25 @@ const poppins = Poppins({
   weight: ["300", "400", "500"],
 });
 
-const lexendDeca = Lexend_Deca({
+const bodoniModa = Bodoni_Moda({
   subsets: ["latin"],
-  variable: "--font-lexend-deca",
+  variable: "--font-bodoni-moda",
 });
 
 export const metadata = {
-  title: "Create Next App",
-  description: "Benchmark Build | Luxurious Interior Design Agency",
+  title: "Benchmark BuildTech Interior Designs",
+  description: "Benchmark Buildtech | Luxurious Interior Design Agency",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${lexendDeca.variable} ${poppins.variable}`}>
+    <html
+      lang="en"
+      className={`${bodoniModa.variable} ${poppins.variable} scroll-smooth custom-scrollbar `}
+    >
       <body>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <main className="">{children}</main>
+        <Toaster position="top-right" />
       </body>
     </html>
   );

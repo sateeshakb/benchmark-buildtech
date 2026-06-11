@@ -1,10 +1,77 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-poppins: var(--font-poppins);
-  --font-lexend: var(--font-lexend-deca);
+  --font-primary: var(--font-bodoni-moda);
+  --font-secondary: var(--font-poppins);
+  --header-height: 64px;
+
+  --color-bg-primary: #fff;
+
+  --color-primary-100: #fcf5e0;
+  --color-primary-200: #f9ebc1;
+  --color-primary-300: #f6e1a1;
+  --color-primary-400: #f1d06d;
+  --color-primary-500: #ebbc2f;
+  --color-primary-600: #dba915;
+  --color-primary-700: #b48b11;
+  --color-primary-800: #8d6e0e;
+  --color-primary-900: #67500a;
+
+  --color-secondary-100: #fce0e0;
+  --color-secondary-200: #f9c1c1;
+  --color-secondary-300: #f6a1a1;
+  --color-secondary-400: #f16d6d;
+  --color-secondary-500: #eb2f2f;
+  --color-secondary-600: #db1515;
+  --color-secondary-700: #b41111;
+  --color-secondary-800: #8d0e0e;
+  --color-secondary-900: #670a0a;
+
+  --color-neutral-50: #f2f2f2;
+  --color-neutral-100: #e6e6e6;
+  --color-neutral-200: #d9d9d9;
+  --color-neutral-300: #cccccc;
+  --color-neutral-400: #a6a6a6;
+  --color-neutral-500: #808080;
+  --color-neutral-600: #666666;
+  --color-neutral-700: #4d4d4d;
+  --color-neutral-800: #333333;
+  --color-neutral-900: #1a1a1a;
+  --color-neutral-950: #0d0d0d;
+
+  --color-warm-50: #fffffe;
+  --color-warm-100: #fdfdfc;
+  --color-warm-200: #fcfcfa;
+  --color-warm-300: #fbfbf7;
+  --color-warm-400: #f8f8f2;
+  --color-warm-500: #f5f5ed;
+  --color-warm-600: #dbdbbf;
+  --color-warm-700: #c1c190;
+  --color-warm-800: #a8a862;
+  --color-warm-900: #7c7c45;
 }
 
 body {
   font-family: var(--font-poppins);
+}
+button {
+  cursor: pointer;
+}
+
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: var(--color-warm-500);
+    border-radius: 100px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--color-secondary-500);
+    border-radius: 100px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--color-secondary-700);
+  }
 }
