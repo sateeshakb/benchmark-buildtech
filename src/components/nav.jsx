@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 import Button from "./button";
+import { useEffect } from "react";
 
 export default function Nav({
   mobile,
   onMenuItemClick,
-  scrolled,
   activeNavLink,
   MarkNavLinkActive,
   toggleModal,
@@ -20,6 +20,34 @@ export default function Nav({
   ];
 
   const isActive = (id) => activeNavLink === id;
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            console.log(entry);
+            MarkNavLinkActive(entry.target.id);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+      },
+    );
+
+    navLinks.forEach((navItem) => {
+      const el = document.getElementById(navItem.id);
+      console.log(el);
+      observer.observe(el);
+    });
+
+    return () =>
+      navLinks.forEach((navItem) => {
+        const el = document.getElementById(navItem.id);
+        observer.unobserve(el);
+      });
+  }, []);
 
   return (
     <>
