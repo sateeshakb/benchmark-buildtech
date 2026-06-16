@@ -10,30 +10,32 @@ export default function About() {
     <section id="about" className="w-full bg-warm-500 py-20">
       <div className="max-w-360 mx-auto px-4 ">
         {/* about benchmark buildTech section  */}
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-4">
+        <div className="flex flex-col lg:flex-row gap-8 ">
           {/* text section  */}
           <div className="flex-1">
             <h2 className="font-primary font-bold text-[clamp(3rem,4vw,4rem)] ">
               About
             </h2>
-            <h3 className="font-secondary font-medium pl-2 pr-10 py-2 bg-neutral-800 inline tracking-wider">
+            <h3 className="font-secondary font-medium pl-2 pr-10 py-2 bg-neutral-900 inline tracking-wider">
               {" "}
               <span className="text-secondary-500">Benchmark</span>{" "}
               <span className="text-primary-500">Buildtech</span>
             </h3>
-            <p className="mt-6 font-primary font-bold italic text-2xl ">
-              1. Luxurious Interior Design Agency
-            </p>
+            <div className=" mt-6 px-6 py-6 rounded-bl-4xl lg:rounded-bl-none lg:rounded-br-4xl border-2 border-neutral-100 bg-warm-50">
+              <p className=" font-semibold tracking-wider  text-secondary-500 text-xl ">
+                1. Luxurious Interior Design Agency
+              </p>
 
-            <p className="mt-4 font-secondary leading-6 ">
-              Benchmark Buildtech is a professional interior fit-out and build
-              solutions company specializing in premium residential and
-              commercial spaces. We focus on delivering well-planned,
-              functional, and refined interiors that balance design intent with
-              execution excellence. Our services cover end-to-end interior
-              fit-out solutions, from planning and coordination to final
-              handover.{" "}
-            </p>
+              <p className="mt-4 font-secondary leading-6 ">
+                Benchmark Buildtech is a professional interior fit-out and build
+                solutions company specializing in premium residential and
+                commercial spaces. We focus on delivering well-planned,
+                functional, and refined interiors that balance design intent
+                with execution excellence. Our services cover end-to-end
+                interior fit-out solutions, from planning and coordination to
+                final handover.{" "}
+              </p>
+            </div>
           </div>
 
           {/* image section  */}
@@ -44,14 +46,14 @@ export default function About() {
 
         {/* expert property solutions section */}
 
-        <div className="mt-16 flex flex-col lg:flex-row gap-8 lg:gap-4 justify-center items-center">
+        <div className="mt-16 flex flex-col lg:flex-row gap-8 justify-center items-center">
           {/* text area */}
-          <div className="flex-1 order-1 lg:order-2  bg-warm-600  px-6 py-6 rounded-br-4xl lg:rounded-br-none lg:rounded-bl-4xl border-2 border-warm-700 ">
-            <p className="font-primary font-bold italic text-neutral-900 text-2xl">
+          <div className="flex-1 order-1 lg:order-2 px-6 py-6 rounded-br-4xl lg:rounded-br-none lg:rounded-bl-4xl border-2 border-neutral-100 bg-warm-50">
+            <p className="font-semibold tracking-wider  text-secondary-500 text-xl">
               2. Expert Property Solutions
             </p>
 
-            <p className=" mt-4 font-secondary leading-6 text-neutral-500 ">
+            <p className=" mt-4 font-secondary leading-6 text-neutral-900  ">
               We also offer property consulting and transaction advisory to
               support informed real estate decisions. Every project is driven by
               structured processes, cost transparency, and quality governance.
@@ -78,7 +80,7 @@ export default function About() {
 
           {/* wrapper */}
 
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center lg:max-w-4/5 sm:gap-4 sm:mx-auto border-2 border-warm-600 px-4 py-4 rounded-2xl shadow-2xl ">
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center lg:max-w-4/5 sm:gap-12 sm:mx-auto border-2 border-warm-600 p-6 rounded-2xl shadow-xl ">
             {/* founder image block */}
             <div className="flex flex-col justify-center items-center">
               <div className="w-72 h-72 rounded-full text-center overflow-hidden relative">

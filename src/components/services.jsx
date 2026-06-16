@@ -12,10 +12,10 @@ export default function Services() {
           What <span className="text-secondary-500">we offer</span>
         </h3>
         {/* Interior design services cards */}
-        <h4 className="mt-8  font-semibold text-lg tracking-wider">
+        <h4 className="mt-12 font-semibold tracking-wide  text-secondary-500 text-xl">
           1. Our Interior Design Services
         </h4>
-        <div className=" mt-8 lg:max-w-3/4  mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div className=" mt-12 lg:max-w-3/4  mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-6">
           {ServiceCardData.interiorServices.map((item) => (
             <ServiceCard
               key={item.id}
@@ -27,10 +27,10 @@ export default function Services() {
         </div>
 
         {/* transaction advisory service cards */}
-        <h4 className="mt-8 font-semibold text-lg tracking-wider ">
+        <h4 className="mt-12 font-semibold tracking-wide  text-secondary-500 text-xl ">
           2. Our Transaction Advisory Services
         </h4>
-        <div className=" mt-8 lg:max-w-3/4  mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div className=" mt-12 pb-20 lg:max-w-3/4  mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-6">
           {ServiceCardData.advisoryServices.map((item) => (
             <ServiceCard
               key={item.id}
@@ -43,7 +43,7 @@ export default function Services() {
       </div>
 
       {/* who we serve section */}
-      <div className="mt-10 bg-warm-500 py-8">
+      <div className=" bg-warm-500 py-20">
         {/* container */}
         <div className="max-w-360 mx-auto px-4">
           {/* heading */}
@@ -52,7 +52,7 @@ export default function Services() {
           </h3>
 
           {/* who we serve cards */}
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:max-w-3/4 mx-auto gap-3">
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:max-w-3/4 mx-auto gap-x-4 gap-y-6">
             {ServiceCardData.whoWeServeData.map((item) => (
               <WhoWeServeCard
                 key={item.id}

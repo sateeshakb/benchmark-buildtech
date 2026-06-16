@@ -7,7 +7,7 @@ export default function Hero({ isModalOpen, toggleModal }) {
   return (
     <section id="home" className="w-full bg-bg-primary pt-(--header-height)">
       {/* wrapper */}
-      <div className="max-w-360 mx-auto px-4 h-auto max-h-256 py-10 flex flex-col gap-8 lg:flex-row lg:justify-between lg:gap-4 relative">
+      <div className="max-w-360 mx-auto px-4 h-auto max-h-256 pt-10 pb-20 flex flex-col gap-8 lg:flex-row lg:justify-between lg:gap-4 relative">
         {/* text block */}
         <div className="order-2 lg:order-1 lg:w-2/5 flex flex-col gap-8 justify-center items-start sm:w-4/5 sm:self-center lg:-mt-20  ">
           {/* tag line */}

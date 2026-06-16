@@ -65,7 +65,7 @@ export default function ContactModal({ isModalOpen, toggleModal }) {
       {/* modal container */}
       <div
         onClick={(e) => e.stopPropagation()}
-        className={`px-4 py-6 flex flex-col w-full md:w-125 bg-warm-50 border-2 border-warm-900 rounded-2xl relative transition-all duration-500 ${isModalOpen ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-95 pointer-events-none "}`}
+        className={`px-4 py-10 flex flex-col w-full md:w-125 bg-warm-50 border-2 border-warm-900 rounded-2xl relative transition-all duration-500 ${isModalOpen ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-95 pointer-events-none "}`}
       >
         <button onClick={toggleModal}>
           <X
