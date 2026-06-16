@@ -12,7 +12,7 @@ export default function TestimonialCard({
     stars.push(<Star key={i} size={25} fill="#eb2f2f" strokeWidth={0} />);
   }
   return (
-    <div className="p-3 border-2 border-neutral-100 rounded-lg flex flex-col justify-between gap-3 relative overflow-hidden">
+    <div className="p-8 border-2 border-neutral-100 rounded-lg flex flex-col justify-between gap-3 relative overflow-hidden">
       {/* stars */}
       <div className="flex gap-1 ">{stars}</div>
 
