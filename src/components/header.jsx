@@ -8,19 +8,11 @@ import { Menu } from "lucide-react";
 import { X } from "lucide-react";
 
 export default function Header({
-  isModalOpen,
   toggleModal,
   MarkNavLinkActive,
   activeNavLink,
 }) {
-  const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <header className={`z-20 fixed top-0 right-0 left-0 bg-neutral-900  `}>
@@ -37,7 +29,6 @@ export default function Header({
         {/* desktop nav */}
         <div className="hidden lg:block">
           <Nav
-            scrolled={scrolled}
             activeNavLink={activeNavLink}
             MarkNavLinkActive={MarkNavLinkActive}
             toggleModal={toggleModal}
@@ -62,7 +53,6 @@ export default function Header({
         >
           <Nav
             mobile={true}
-            scrolled={scrolled}
             onMenuItemClick={() => setIsMenuOpen(false)}
             activeNavLink={activeNavLink}
             MarkNavLinkActive={MarkNavLinkActive}

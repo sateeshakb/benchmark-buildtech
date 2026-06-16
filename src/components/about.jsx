@@ -16,7 +16,7 @@ export default function About() {
             <h2 className="font-primary font-bold text-[clamp(3rem,4vw,4rem)] ">
               About
             </h2>
-            <h3 className="font-secondary font-medium pl-2 pr-10 py-2 bg-neutral-800 inline tracking-wider">
+            <h3 className="font-secondary font-medium pl-2 pr-10 py-2 bg-neutral-900 inline tracking-wider">
               {" "}
               <span className="text-secondary-500">Benchmark</span>{" "}
               <span className="text-primary-500">Buildtech</span>
