@@ -6,6 +6,7 @@ import Nav from "./nav";
 import { useEffect, useState } from "react";
 import { Menu } from "lucide-react";
 import { X } from "lucide-react";
+import Link from "next/link";
 
 export default function Header({
   toggleModal,
@@ -18,12 +19,14 @@ export default function Header({
     <header className={`z-20 fixed top-0 right-0 left-0 bg-neutral-900  `}>
       <div className="w-full max-w-360 mx-auto flex justify-between items-center px-4 py-2">
         <div>
-          <Image
-            alt="Benchmark BuildTech Logo"
-            src={images.logo}
-            width={150}
-            className="h-auto"
-          />
+          <Link href={"/"}>
+            <Image
+              alt="Benchmark BuildTech Logo"
+              src={images.logo}
+              width={150}
+              className="h-auto"
+            />
+          </Link>
         </div>
 
         {/* desktop nav */}

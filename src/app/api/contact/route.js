@@ -2,8 +2,7 @@ import ConsultationRequestEmail from "@/emails/consultationRequestEmail";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-console.log("api key:", process.env.RESEND_API_KEY);
-console.log("email:", process.env.RECIPIENT_EMAIL);
+
 export async function POST(request) {
   try {
     const body = await request.json();
@@ -29,12 +28,20 @@ export async function POST(request) {
       );
     }
 
-    await resend.emails.send({
-      from: "Benchmark Buildtech <onboarding@resend.dev>",
+    const { error, data } = await resend.emails.send({
+      from: "Benchmark Buildtech <noreply@contact.benchmarkbuildtech.co.in>",
       to: process.env.RECIPIENT_EMAIL,
       subject: `New Consultation Request from ${name}`,
       react: ConsultationRequestEmail({ name, email, phone, message }),
     });
+
+    if (error) {
+      console.error("Resend error:", error);
+      return Response.json(
+        { success: false, message: "Failed to send email." },
+        { status: 500 },
+      );
+    }
 
     return Response.json(
       { success: true, message: "Email sent successfully" },

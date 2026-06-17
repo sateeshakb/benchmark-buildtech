@@ -5,6 +5,7 @@ import Link from "next/link";
 import { MapPin } from "lucide-react";
 import { Phone } from "lucide-react";
 import { Mail } from "lucide-react";
+import { handleNavClick } from "@/lib/utils";
 
 export default function Footer({
   isModalOpen,
@@ -13,7 +14,7 @@ export default function Footer({
   activeNavLink,
 }) {
   const navLinks = [
-    { href: "/", label: "Home", id: "home" },
+    { href: "#home", label: "Home", id: "home" },
     { href: "#about", label: "About", id: "about" },
     { href: "#services", label: "Services", id: "services" },
     // { href: "#portfolio", label: "Portfolio", id: "portfolio" },
@@ -108,7 +109,10 @@ export default function Footer({
                 <Link
                   key={navItem.href}
                   href={navItem.href}
-                  onClick={() => MarkNavLinkActive(navItem.id)}
+                  onClick={(e) => {
+                    MarkNavLinkActive(navItem.id);
+                    handleNavClick(e, navItem.id);
+                  }}
                   className={`${navItem.id === activeNavLink ? "text-secondary-500" : "text-neutral-500"} hover:text-secondary-500 `}
                 >
                   {navItem.label}
