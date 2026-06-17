@@ -7,7 +7,10 @@ export default function WhoWeServeCard({ icon, title, text }) {
       </div>
 
       {/* title */}
-      <h4 className="text-lg font-medium text-neutral-900"> {title}</h4>
+      <h4 className="text-lg font-medium text-neutral-900 text-center">
+        {" "}
+        {title}
+      </h4>
 
       {/* text content */}
       <p className="text-base tracking-wide text-neutral-900">{text}</p>
