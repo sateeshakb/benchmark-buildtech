@@ -62,7 +62,7 @@ export default function QualifiedLeadEmail({
               marginBottom: "8px",
             }}
           >
-            BASIC DETAILS
+            CONSULTATION
           </Text>
 
           <Row>
@@ -142,7 +142,7 @@ export default function QualifiedLeadEmail({
               marginBottom: "8px",
             }}
           >
-            PROPERTY DETAILS
+            CONCEPT & REFINEMENT
           </Text>
 
           <Row>
@@ -165,7 +165,7 @@ export default function QualifiedLeadEmail({
               <Text
                 style={{ color: "#999", fontSize: "12px", marginBottom: "4px" }}
               >
-                PROPERTY STATUS
+                CRAFT & CREATE
               </Text>
               <Text
                 style={{ color: "#1C1210", fontSize: "16px", marginTop: "0" }}

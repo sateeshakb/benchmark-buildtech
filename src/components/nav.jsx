@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Button from "./button";
 import { useEffect } from "react";
+import { handleNavClick } from "@/lib/utils";
 
 export default function Nav({
   mobile,
@@ -12,7 +13,7 @@ export default function Nav({
   toggleModal,
 }) {
   const navLinks = [
-    { href: "/", label: "Home", id: "home" },
+    { href: "#home", label: "Home", id: "home" },
     { href: "#about", label: "About", id: "about" },
     { href: "#services", label: "Services", id: "services" },
     // { href: "#portfolio", label: "Portfolio", id: "portfolio" },
@@ -26,7 +27,6 @@ export default function Nav({
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            console.log(entry);
             MarkNavLinkActive(entry.target.id);
           }
         });
@@ -38,14 +38,13 @@ export default function Nav({
 
     navLinks.forEach((navItem) => {
       const el = document.getElementById(navItem.id);
-      console.log(el);
       observer.observe(el);
     });
 
     return () =>
       navLinks.forEach((navItem) => {
         const el = document.getElementById(navItem.id);
-        observer.unobserve(el);
+        if (el) observer.unobserve(el);
       });
   }, []);
 
@@ -57,8 +56,10 @@ export default function Nav({
             <Link
               key={navItem.href}
               href={navItem.href}
-              onClick={() => {
-                (onMenuItemClick(), MarkNavLinkActive(navItem.id));
+              onClick={(e) => {
+                onMenuItemClick();
+                MarkNavLinkActive(navItem.id);
+                handleNavClick(e, navItem.id);
               }}
               className={`text-center  transition-all duration-500 px-4 py-2 border-b-2
                 ${
@@ -78,8 +79,11 @@ export default function Nav({
               <Link
                 key={navItem.href}
                 href={navItem.href}
-                onClick={() => MarkNavLinkActive(navItem.id)}
-                className={`font-medium transition-all duration-500 px-4 py-2 border-b-2
+                onClick={(e) => {
+                  MarkNavLinkActive(navItem.id);
+                  handleNavClick(e, navItem.id);
+                }}
+                className={`font-medium transition-all duration-500 px-4 py-2 border-b-2 hover:text-secondary-500
                 ${
                   isActive(navItem.id)
                     ? "text-secondary-500 border-secondary-500"

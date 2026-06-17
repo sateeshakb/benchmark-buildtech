@@ -115,19 +115,19 @@ export default function QualifiedLead() {
         <span
           className={`${currentState === 1 ? "text-red-600 font-semibold" : "text-neutral-400"}`}
         >
-          ① Basic Details
+          ① Consultation
         </span>
         <span className="rotate-90  sm:rotate-0">→</span>
         <span
           className={`${currentState === 2 ? "text-red-600 font-semibold" : "text-neutral-400"}`}
         >
-          ② Property Details
+          ② Concept & Refinement
         </span>
         <span className="rotate-90 sm:rotate-0">→</span>
         <span
           className={`${currentState === 3 ? "text-red-600 font-semibold" : "text-neutral-400"}`}
         >
-          ③ Planning Stage
+          ③ Craft & Create
         </span>
       </div>
       <form onSubmit={handleSubmit} className="">

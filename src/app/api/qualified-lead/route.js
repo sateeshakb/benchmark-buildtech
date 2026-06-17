@@ -46,8 +46,8 @@ export async function POST(request) {
         { status: 400 },
       );
     }
-    await resend.emails.send({
-      from: "Benchmark Buildtech <onboarding@resend.dev>",
+    const { data, error } = await resend.emails.send({
+      from: "Benchmark Buildtech <noreply@contact.benchmarkbuildtech.co.in>",
       to: process.env.RECIPIENT_EMAIL,
       subject: `New Project Inquiry from ${name}`,
       react: QualifiedLeadEmail({
@@ -62,12 +62,18 @@ export async function POST(request) {
         designerStatus,
       }),
     });
-
+    if (error) {
+      console.error("Resend Error: ", error);
+      return Response.json(
+        { success: false, message: "Failed to send email" },
+        { status: 500 },
+      );
+    }
     return Response.json(
       { success: true, message: "Thank you! We'll get back to you shortly." },
       { status: 200 },
     );
-  } catch {
+  } catch (error) {
     console.error("Email error:", error);
     return Response.json(
       { success: false, message: "Something went wrong. Please try again." },
