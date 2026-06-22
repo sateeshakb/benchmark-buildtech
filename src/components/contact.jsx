@@ -34,6 +34,7 @@ export default function Contact({ isModalOpen, toggleModal }) {
             </p>
             <Button
               buttonText="Book Free Consultation"
+              ariaLabel="Book Free Consultation"
               variant={"primary"}
               onClickHandler={toggleModal}
             />

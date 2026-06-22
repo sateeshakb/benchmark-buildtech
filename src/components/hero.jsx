@@ -18,7 +18,7 @@ export default function Hero({ isModalOpen, toggleModal }) {
             </p>
           </div>
           {/* heading */}
-          <p className="text-[clamp(3rem,5vw,4.5rem)] lg:w-[135%]  lg:relative lg:z-10 font-primary font-medium">
+          <p className="text-[clamp(3rem,5vw,4.5rem)]  font-primary font-medium">
             <span className="bg-bg-primary">
               {" "}
               Design. Build. Transform
@@ -37,6 +37,7 @@ export default function Hero({ isModalOpen, toggleModal }) {
               buttonText="Book Free Consultation"
               variant={"primary"}
               onClickHandler={toggleModal}
+              ariaLabel="Book Free Consultation"
             />
             {/* <Button buttonText="View Portfolio" variant={"secondary"} /> */}
           </div>
