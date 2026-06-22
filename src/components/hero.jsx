@@ -48,18 +48,18 @@ export default function Hero({ isModalOpen, toggleModal }) {
 
           <div className="col-start-1 row-start-1 col-end-6 row-end-5 z-5 ">
             <Image
-              preload={true}
               src={Images.heroImageOne}
               alt="Interior Design work by Benchmark Buildtech"
               className="w-full h-full object-contain"
+              sizes="(max-width: 768px) 90vw, (max-width: 1024px) 64w, 60vw"
             />
           </div>
           <div className="row-start-3 col-start-4 row-end-6 col-end-7 z-5">
             <Image
-              preload={true}
               src={Images.heroImageTwo}
               alt="Interior Design work by Benchmark Buildtech"
               className="w-full h-full object-contain"
+              sizes="(max-width: 768px) 90vw, (max-width: 1024px) 64w, 60vw"
             />
           </div>
         </div>

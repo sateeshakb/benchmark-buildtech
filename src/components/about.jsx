@@ -40,7 +40,11 @@ export default function About() {
 
           {/* image section  */}
           <div className="flex-1">
-            <Image src={Images.aboutImage} alt="about benchmark buildtech" />
+            <Image
+              src={Images.aboutImage}
+              alt="about benchmark buildtech"
+              sizes="(max-width: 768px) 90vw, (max-width: 1024px) 64w, 60vw"
+            />
           </div>
         </div>
 
