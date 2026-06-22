@@ -7,7 +7,7 @@ export default function ServiceCard({ icon, title, text }) {
       </div>
 
       {/* title */}
-      <h4 className="text-lg font-medium">{title}</h4>
+      <h4 className="text-lg font-medium text-center">{title}</h4>
       <p className="text-base tracking-wide">{text}</p>
     </div>
   );

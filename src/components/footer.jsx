@@ -41,6 +41,7 @@ export default function Footer({
             </p>
             <Button
               buttonText="Book Free Consultation"
+              ariaLabel="Book Free Consultation"
               variant={"primary"}
               onClickHandler={toggleModal}
             />

@@ -96,6 +96,7 @@ export default function Nav({
           </nav>
           <Button
             buttonText="Book Free Consultation"
+            ariaLabel="Book Free Consultation"
             variant={"primary"}
             onClickHandler={toggleModal}
           />

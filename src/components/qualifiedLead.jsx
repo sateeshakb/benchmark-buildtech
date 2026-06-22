@@ -202,6 +202,7 @@ export default function QualifiedLead() {
               <button
                 className="mt-4 block ml-auto px-3 py-1 font-medium text-neutral-800 rounded-lg bg-primary-500 hover:bg-primary-600 transition-all duration-300"
                 type="button"
+                aria-label="goto step 2 of contact form"
                 onClick={handleNext}
               >
                 Next
@@ -279,6 +280,7 @@ export default function QualifiedLead() {
             <div className="w-fit ml-auto flex gap-4 mt-4  ">
               <button
                 type="button"
+                ariaLabel="go back to step 1 of contact form"
                 onClick={decrementCurrentState}
                 className="px-3 py-1 font-medium text-neutral-500 rounded-lg border border-neutral-300  hover:opacity-80 transition-all duration-300 "
               >
@@ -288,6 +290,7 @@ export default function QualifiedLead() {
                 className="px-3 py-1 font-medium text-neutral-800 rounded-lg bg-primary-500 hover:bg-primary-600 transition-all duration-300"
                 type="button"
                 onClick={handleNext}
+                ariaLabel="goto step 3 of contact form"
               >
                 Next
               </button>
@@ -363,6 +366,8 @@ export default function QualifiedLead() {
               <button
                 type="button"
                 onClick={decrementCurrentState}
+                disabled={isSubmitting}
+                ariaLabel="go back to step 2 of contact form"
                 className="px-3 py-1 font-medium text-neutral-500 rounded-lg border border-neutral-300  hover:opacity-80 transition-all duration-300 "
               >
                 Back
@@ -371,6 +376,7 @@ export default function QualifiedLead() {
                 className="px-3 py-1 font-medium text-neutral-800 rounded-lg bg-primary-500 hover:bg-primary-600 transition-all duration-300"
                 type="submit"
                 disabled={isSubmitting}
+                ariaLabel="submit contact form"
               >
                 {isSubmitting ? "Submitting..." : "Submit"}
               </button>

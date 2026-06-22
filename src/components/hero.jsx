@@ -18,7 +18,7 @@ export default function Hero({ isModalOpen, toggleModal }) {
             </p>
           </div>
           {/* heading */}
-          <p className="text-[clamp(3rem,5vw,4.5rem)] lg:w-[135%]  lg:relative lg:z-10 font-primary font-medium">
+          <p className="text-[clamp(3rem,5vw,4.5rem)]  font-primary font-medium">
             <span className="bg-bg-primary">
               {" "}
               Design. Build. Transform
@@ -28,7 +28,8 @@ export default function Hero({ isModalOpen, toggleModal }) {
           {/* paragraph */}
           <p className="">
             Benchmark Buildtech delivers premium residential and commercial
-            interiors with expert project management and flawless execution.
+            interiors in Bangalore, with expert project management and flawless
+            execution from concept to handover.
           </p>
           {/* button */}
           <div className="flex gap-8 lg:mt-4">
@@ -36,6 +37,7 @@ export default function Hero({ isModalOpen, toggleModal }) {
               buttonText="Book Free Consultation"
               variant={"primary"}
               onClickHandler={toggleModal}
+              ariaLabel="Book Free Consultation"
             />
             {/* <Button buttonText="View Portfolio" variant={"secondary"} /> */}
           </div>
@@ -46,15 +48,17 @@ export default function Hero({ isModalOpen, toggleModal }) {
 
           <div className="col-start-1 row-start-1 col-end-6 row-end-5 z-5 ">
             <Image
+              preload={true}
               src={Images.heroImageOne}
-              alt="interior image 1"
+              alt="Interior Design work by Benchmark Buildtech"
               className="w-full h-full object-contain"
             />
           </div>
           <div className="row-start-3 col-start-4 row-end-6 col-end-7 z-5">
             <Image
+              preload={true}
               src={Images.heroImageTwo}
-              alt="interior image 2"
+              alt="Interior Design work by Benchmark Buildtech"
               className="w-full h-full object-contain"
             />
           </div>

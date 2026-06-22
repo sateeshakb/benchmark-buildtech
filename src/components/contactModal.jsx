@@ -67,7 +67,7 @@ export default function ContactModal({ isModalOpen, toggleModal }) {
         onClick={(e) => e.stopPropagation()}
         className={`px-4 py-10 flex flex-col w-full md:w-125 bg-warm-50 border-2 border-warm-900 rounded-2xl relative transition-all duration-500 ${isModalOpen ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-95 pointer-events-none "}`}
       >
-        <button onClick={toggleModal}>
+        <button aria-label="close free consultation form" onClick={toggleModal}>
           <X
             strokeWidth={3}
             className="absolute top-4 right-4 font-bold text-neutral-700 hover:text-neutral-500"
@@ -148,6 +148,7 @@ export default function ContactModal({ isModalOpen, toggleModal }) {
             </label>
           </div>
           <button
+            aria-label="submit free consultation form"
             type="submit"
             disabled={isSubmitting}
             className="mt-4 px-4 py-2 bg-primary-500 text-neutral-900 font-medium hover:bg-primary-600 transition-all duration-150"
