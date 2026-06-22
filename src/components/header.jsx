@@ -42,6 +42,7 @@ export default function Header({
         <button
           className={`lg:hidden relative p-2 w-8 h-8`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="open navigation menu"
         >
           <Menu
             className={`absolute inset-0 transition-all duration-300  text-warm-50 ${isMenuOpen ? "opacity-0 rotate-90" : "opacity-100 rotate-0"}`}
